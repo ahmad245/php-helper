@@ -13,3 +13,19 @@ $result=expectFun(function() use ($variableOutSide){
 });
 
 var_dump($result);
+
+
+function findValue($val){
+    $arr=[
+      "id"=>1,"name"=>"ahmad"
+    ];
+    $result=array_filter($arr,function($key,$value) use($val){
+     return $key==$val;
+     },ARRAY_FILTER_USE_BOTH );
+      
+      return $result;
+    }
+    
+    
+    var_dump( findValue(1));
+    
